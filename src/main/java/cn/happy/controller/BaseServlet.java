@@ -16,8 +16,10 @@ import java.lang.reflect.Method;
 public  abstract class BaseServlet extends HttpServlet {
 
 
-    public  abstract Class getServletClass();
-
+    public  abstract Class getServletClass();//子类去继承getServletClass ,去实现
+/*
+* 让子类间接的继承servlet
+* */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       doPost(req, resp);
@@ -34,10 +36,10 @@ public  abstract class BaseServlet extends HttpServlet {
         //执行方法的返回值
         Object result=null;
         if (methodName==null||"".equals(methodName)){
-            result= execute(req,resp);  //统一返回到 主页面
+            result= execute(req,resp);  //统一返回到 主页面 main.jsp ,没有返回值 main,jsp
         }else {  //证明有方法  必须先确定哪个servlet
             try {
-                //找到方法
+                //找到方法,获取所有方法名字
                 method= getServletClass().getDeclaredMethod(methodName,HttpServletRequest.class,HttpServletResponse.class);
                 result= method.invoke(this,req,resp); //执行方法
                 System.out.println("======>获取了 需要返回的页面"+result);
@@ -68,7 +70,7 @@ public  abstract class BaseServlet extends HttpServlet {
                 System.out.println("json=====>"+resultJson);
                 PrintWriter writer=resp.getWriter();
                 writer.write(resultJson);
-                writer.flush();
+                writer.flush();//清空缓冲区
                 writer.close();
             }
         }

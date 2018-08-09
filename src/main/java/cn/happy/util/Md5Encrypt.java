@@ -11,6 +11,7 @@ import java.security.SecureRandom;
  *
  */
 public class Md5Encrypt {
+
     private static final String HEX_NUMS_STR="0123456789ABCDEF";   //16进制字符串
     private static final Integer SALT_LENGTH = 12;   //盐数据长度
 
