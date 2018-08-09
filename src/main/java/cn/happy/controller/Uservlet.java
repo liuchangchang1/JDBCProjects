@@ -55,7 +55,7 @@ public class Uservlet extends  BaseServlet {
         users.setUserType(0);  //设置用户类型
         users.setEmail("55");
         int num= userService.add(users);
-        if (num>0){
+        if (num>0){//如果加进去值了，
             return  "main";
         }else{
             return "register";
