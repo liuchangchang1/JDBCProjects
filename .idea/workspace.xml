@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42ad992e-db0b-4b45-912f-6e1ba4e1c472" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/happy/controller/Uservlet.java" afterPath="$PROJECT_DIR$/src/main/java/cn/happy/controller/Uservlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/happy/dao/user/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/cn/happy/dao/user/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/happy/dao/user/UserDaoimpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/happy/dao/user/UserDaoimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/happy/service/user/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/cn/happy/service/user/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/happy/service/user/Userserviceimpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/happy/service/user/Userserviceimpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/happy/util/ResultUtil.java" afterPath="$PROJECT_DIR$/src/main/java/cn/happy/util/ResultUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1450,7 +1444,7 @@
       <workItem from="1533788378298" duration="12604000" />
       <workItem from="1533801154366" duration="1910000" />
       <workItem from="1533848359258" duration="7000" />
-      <workItem from="1533849224448" duration="5847000" />
+      <workItem from="1533849224448" duration="5863000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化完毕">
       <created>1533265361848</created>
@@ -1501,11 +1495,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533802370991</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="项目初始化完毕1">
+      <created>1533868840726</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1533868840726</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67735000" />
+    <option name="totallyTimeSpent" value="67751000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
