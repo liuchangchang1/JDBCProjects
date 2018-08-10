@@ -54,4 +54,20 @@ public class Userserviceimpl implements UserService {
     public List<Users> findAllByPage(PageUtil util, Object... params) {
         return null;
     }
+
+    @Override
+
+    /**
+     * 注册
+     *
+     */
+
+    public int validateName(String userName) {
+        return userDao1.validateName(userName);
+    }
+
+    @Override
+    public Users login(String userName, String password) {
+        return userDao1.login(userName,password);
+    }
 }

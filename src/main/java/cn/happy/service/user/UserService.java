@@ -11,5 +11,7 @@ import java.util.List;
  * Created by Administrator on 2018-8-9.
  */
 public interface UserService extends IBaseService<Users>{
+    public int validateName(String userName);
+    public  Users login(String userName,String password);
 
 }

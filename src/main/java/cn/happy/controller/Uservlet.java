@@ -27,22 +27,23 @@ public class Uservlet extends  BaseServlet {
     //不实例化service层对象  让工厂去实例化
 
     //不实例化service层对象  让工厂去实例化
-    private UserService  userService;
+    private UserService userService;
+    private ResultUtil util;
 
-    //当用户访问我们这个servlet的时候 先执行init
     //当用户访问我们这个servlet的时候 先执行init
     @Override
     public void init() throws ServletException {
-        userService=(UserService) ServiceFactory.getServiceImpl("userService");
+        userService = (UserService) ServiceFactory.getServiceImpl("userService");
     }
+
     /**
      * 用户注册的方法
      */
-    public  String  register(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+    public String register(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         //获取用户输入的参数
-        String userName=req.getParameter("username");
-        String password=req.getParameter("password");
-        Users users=new Users();
+        String userName = req.getParameter("username");
+        String password = req.getParameter("password");
+        Users users = new Users();
         users.setUserName(userName);
         try {
             users.setPassword(Md5Encrypt.getEncryptedPwd(password));
@@ -54,28 +55,44 @@ public class Uservlet extends  BaseServlet {
         }
         users.setUserType(0);  //设置用户类型
         users.setEmail("55");
-        int num= userService.add(users);
-        if (num>0){//如果加进去值了，
-            return  "main";
-        }else{
+        int num = userService.add(users);
+        if (num > 0) {//如果加进去值了，
+            return "main";
+        } else {
             return "register";
         }
     }
 
 
-    public ResultUtil login(HttpServletRequest req, HttpServletResponse resp){
+    public ResultUtil login(HttpServletRequest req, HttpServletResponse resp) {
         System.out.println("====>UserServlet===>login");
         //获取用户登录的用户名和密码
-        String userName=req.getParameter("username");
-        String password=req.getParameter("password");
-        ResultUtil util=new ResultUtil();
+        String userName = req.getParameter("username");
+        String password = req.getParameter("password");
+        ResultUtil util = new ResultUtil();
         //得从数据库中获取一个用户名  如果没有用户名不需要再执行后续代码
-        if (userName.equals("admin")){
+        if (userName.equals("admin")) {
             util.resultSuccess(userName);
-        }else{
+        } else {
             util.resultFail("用户名错误");
         }
         //调用MD5验证密码
         return util;
+    }
+
+
+
+    public ResultUtil validateName(HttpServletRequest req, HttpServletResponse resp){
+        System.out.println("进入了validatename===");
+        String userName=req.getParameter("username");
+        int num=userService.validateName(userName);
+        if(num==0){
+            util.resultSuccess();//可以注册
+        }
+        else{
+            util.resultFail("该名称以经被占用 ");
+        }
+
+        return  util;
     }
 }

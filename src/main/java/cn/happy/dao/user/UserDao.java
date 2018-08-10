@@ -13,4 +13,6 @@ public interface UserDao extends IBaseDao<Users>{
  * 登陆的操作！
  * */
 
+ public int validateName(String userName);
+public  Users login(String userName,String password);
 }

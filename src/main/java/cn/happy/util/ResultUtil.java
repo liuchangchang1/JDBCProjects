@@ -17,6 +17,10 @@ public class ResultUtil {
         this.status=1;
         return  this;
     }
+    public ResultUtil resultSuccess(){
+        this.status=1;
+        return  this;
+    }
     /**
      * 错误的方法
      */
