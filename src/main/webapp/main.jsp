@@ -1,103 +1,117 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-	<meta name="author" content="Muhammad Usman">
+    <meta charset="utf-8">
+    <title>Free HTML5 Bootstrap Admin Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
 
-	<!-- The styles -->
-	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
-	<style type="text/css">
-		body {
-			padding-bottom: 40px;
-		}
-		.sidebar-nav {
-			padding: 9px 0;
-		}
-	</style>
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="css/charisma-app.css" rel="stylesheet">
-	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href='css/fullcalendar.css' rel='stylesheet'>
-	<link href='css/fullcalendar.print.css' rel='stylesheet'  media='print'>
-	<link href='css/chosen.css' rel='stylesheet'>
-	<link href='css/uniform.default.css' rel='stylesheet'>
-	<link href='css/colorbox.css' rel='stylesheet'>
-	<link href='css/jquery.cleditor.css' rel='stylesheet'>
-	<link href='css/jquery.noty.css' rel='stylesheet'>
-	<link href='css/noty_theme_default.css' rel='stylesheet'>
-	<link href='css/elfinder.min.css' rel='stylesheet'>
-	<link href='css/elfinder.theme.css' rel='stylesheet'>
-	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
-	<link href='css/opa-icons.css' rel='stylesheet'>
-	<link href='css/uploadify.css' rel='stylesheet'>
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
 
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/charisma-app.css" rel="stylesheet">
+    <link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+    <link href='css/fullcalendar.css' rel='stylesheet'>
+    <link href='css/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='css/chosen.css' rel='stylesheet'>
+    <link href='css/uniform.default.css' rel='stylesheet'>
+    <link href='css/colorbox.css' rel='stylesheet'>
+    <link href='css/jquery.cleditor.css' rel='stylesheet'>
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/opa-icons.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
 
-	<!-- The fav icon -->
-	<link rel="shortcut icon" href="img/favicon.ico">
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
 
 </head>
 
 <body>
 
 <div class="row-fluid sortable">
-	<div class="box span12">
-		<div class="box-header well" data-original-title>
-			<h2><i class="icon-edit"></i> Form Elements</h2>
-			<div class="box-icon">
-				<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-				<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-			</div>
-		</div>
-		<div class="box-content">
-			<form class="form-horizontal">
-				<fieldset>
-					<legend>Datepicker, Autocomplete, WYSIWYG</legend>
-					<div class="control-group">
-						<label class="control-label" for="typeahead">Auto complete </label>
-						<div class="controls">
-							<input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
-							<p class="help-block">Start typing to activate auto complete!</p>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="date01">Date input</label>
-						<div class="controls">
-							<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
-						</div>
-					</div>
-
-					<div class="control-group">
-						<label class="control-label" for="fileInput">File input</label>
-						<div class="controls">
-							<input class="input-file uniform_on" id="fileInput" type="file">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="textarea2">Textarea WYSIWYG</label>
-						<div class="controls">
-							<textarea class="cleditor" id="textarea2" rows="3"></textarea>
-						</div>
-					</div>
-					<div class="form-actions">
-						<button type="submit" class="btn btn-primary">Save changes</button>
-						<button type="reset" class="btn">Cancel</button>
-					</div>
-				</fieldset>
-			</form>
-
-		</div>
-	</div><!--/span-->
-
+    <div class="box span12">
+        <div class="box-header well" data-original-title>
+            <h2><i class="icon-user"></i> ${sessionScope.loginUser.userName}</h2>
+            <div class="box-icon">
+                <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+                <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+                <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                <thead>
+                <tr>
+                    <th>用户编号</th>
+                    <th>用户名</th>
+                    <th>用户邮箱</th>
+                    <th>用户类型</th>
+                </tr>
+                </thead>
+                <tbody id="list-content"></tbody>
+            </table>
+        </div>
+    </div><!--/span-->
 </div><!--/row-->
 
+<%--引入自己的pagination--%>
+<div class="pagination" id="pagination"></div>
+
+</div><!--/row-->
+<%--引入自己的pagination--%>
+<div class="pagination" id="pagination"></div>
+<%-- 模态窗口--%>
+<%--
+<div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3>Settings</h3>
+    </div>
+    <div class="modal-body">
+        <p>Here settings can be configured...</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+        <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
+</div>
+--%>
+
+<%-- 模态窗口--%>
+<div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3>温馨提示</h3>
+    </div>
+    <div class="modal-body">
+        <p>您是否确定删除...</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">关闭</a>
+        <a onclick="realDelete();" class="btn btn-primary">确认删除</a>
+    </div>
+    <%--设置隐藏域 获取需要删除的id--%>
+    <input type="hidden" id="deleteId">
 
 <!-- jQuery -->
 <script src="js/jquery-1.7.2.min.js"></script>
@@ -168,7 +182,70 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
+<%--引入分页插件--%>
+<script src="js/jquery.pagination.js"></script>
+<script type="text/javascript">
+    loadData(1);
+    function loadData(pageIndex) {
+        $.ajax({
+            url:"/home?methodName=findAllByPage",
+            type:"POST",
+            data:{"pageIndex":pageIndex},
+            success:function (data) {
+                //每次成功清除之前的数据
+                $("#list-content").html("");
+                var data=$.parseJSON(data);
+                //遍历数据
+                $.each(data.list,function (i,dom) {
+                    $("#list-content").append(" <tr>\n" +
+                        "  <td>"+dom.users_id+"</td>\n" +
+                        "                    <td class=\"center\">"+dom.userName+"</td>\n" +
+                        "                    <td class=\"center\">\n" +
+                        "                        <span class=\"label label-warning\">"+dom.email+"</span>\n" +
+                        "                    </td>\n" +
+                        "                    <td class=\"center\">\n" +
+                        "                        <span class=\"label label-warning\">"+dom.userType+"</span>\n" +
+                        "                    </td>\n" +
+                        "                    <td class=\"center\">\n" +
+                        "                        <a class=\"btn btn-danger\" onclick=\"showModal("+dom.users_id+");\">\n" +
+                        "                            <i class=\"icon-trash icon-white\"></i>\n" +
+                        "                            删除\n" +
+                        "                        </a>\n" +
+                        "                    </td>\n" +
+                        "                </tr>");
+                });  // each结束
+                //使用分页插件
+                $("#pagination").pagination(data.totalCount,
+                    {
+                        current_page:data.pageIndex-1, //当前页面
+                        items_per_page:data.pageSize, //每页显示的条目数
+                        prev_text:"上一页",
+                        next_text:"下一页",
+                        callback:function(index)
+                        {
+                            loadData(index+1);
+                        }
+                    });
+            }//success回调函数
+        });
+    };
+
+    function  showModal(delId) {
+        //显示模态窗口
+        $("#myModal").modal("show");
+        //给隐藏域赋值
+        $("#deleteId").val(delId);
+    }
+    /**
+     * 真正的删除
+     */
+    function realDelete() {
+        var id= $("#deleteId").val();
+        window.location.href="/home?methodName=deleteUser&id="+id;
+    }
+</script>
 
 </body>
+
 
 </html>

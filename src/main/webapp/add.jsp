@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -41,8 +42,11 @@
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
+
 </head>
+
 <body>
+
 <div class="row-fluid sortable">
 	<div class="box span12">
 		<div class="box-header well" data-original-title>
@@ -94,23 +98,6 @@
 	</div><!--/span-->
 
 </div><!--/row-->
-<%--弹窗--%>
-<div class="modal hide fade" id="myModal">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal">×</button>
-		<h3>Settings</h3>
-	</div>
-	<div class="modal-body">
-		<p>Here settings can be configured...</p>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal">Close</a>
-		<a href="#" class="btn btn-primary">Save changes</a>
-	</div>
-</div>
-
-
-
 
 
 <!-- jQuery -->

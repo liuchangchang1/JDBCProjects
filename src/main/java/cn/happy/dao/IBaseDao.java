@@ -11,14 +11,13 @@ import java.util.List;
  */
 public interface  IBaseDao<T> {
        //注册,增加，删除，修改
-    int add(T t) throws Exception;//<T> 代表 你想写什么就写什么
-    int dele(Serializable id);
-    int updateById(T t);
-    T findAllCondition(Serializable id);
-    List<T> findall();
-    int  findRownum();
-    List<T>finallPage(PageUtil util,Object ...params);
-
+       int add(T t);
+    int deleteByCondition(Serializable id);
+    int update(T t);
+    T findByCondition(Serializable id);
+    List<T> findAll();
+    int findRownum();
+    List<T>  findAllByPage(PageUtil util, Object ...params);
 
 
 

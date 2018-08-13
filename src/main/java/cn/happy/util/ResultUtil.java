@@ -4,7 +4,6 @@ package cn.happy.util;
  * Created by Administrator on 2018-8-7.
  */
 public class ResultUtil {
-
     private int status;   // 状态  1成功   0失败
     private String message;   // 错误信息
     private Object  data; // 返回的数据
@@ -17,6 +16,9 @@ public class ResultUtil {
         this.status=1;
         return  this;
     }
+    /**
+     * 成功的方法
+     */
     public ResultUtil resultSuccess(){
         this.status=1;
         return  this;

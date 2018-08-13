@@ -18,16 +18,12 @@ public class Userserviceimpl implements UserService {
 
     @Override
     public int add(Users users) throws Exception {
-
-
             return userDao1.add(users);
-
-
     }
 
     @Override
     public int deleteByCondition(Serializable id) {
-        return 0;
+        return userDao1.deleteByCondition(id);
     }
 
     @Override
@@ -47,22 +43,17 @@ public class Userserviceimpl implements UserService {
 
     @Override
     public int findRownum() {
-        return 0;
+        return userDao1.findRownum();
     }
 
     @Override
     public List<Users> findAllByPage(PageUtil util, Object... params) {
-        return null;
+        return userDao1.findAllByPage(util);
     }
 
+    /*验证名字是否存在*/
     @Override
-
-    /**
-     * 注册
-     *
-     */
-
-    public int validateName(String userName) {
+    public String validateName(String userName) {
         return userDao1.validateName(userName);
     }
 
@@ -70,4 +61,13 @@ public class Userserviceimpl implements UserService {
     public Users login(String userName, String password) {
         return userDao1.login(userName,password);
     }
+
+
+    /**
+     * 注册
+     *
+     */
+
+
+
 }

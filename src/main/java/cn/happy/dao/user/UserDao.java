@@ -10,9 +10,11 @@ import cn.happy.dao.IBaseDao;
 public interface UserDao extends IBaseDao<Users>{
  /*
  *
- * 登陆的操作！
+ * 验证用户名的操作!
  * */
 
- public int validateName(String userName);
-public  Users login(String userName,String password);
+
+  String validateName(String userName);
+
+  Users login(String userName, String password);
 }

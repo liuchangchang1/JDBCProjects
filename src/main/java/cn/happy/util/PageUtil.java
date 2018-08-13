@@ -1,15 +1,17 @@
 package cn.happy.util;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2018-8-9.
  * 简单的分页工具类
  */
-public class PageUtil {
-    private int pageIndex; //当前页
+public class PageUtil<E>{
+    private int pageIndex=1; //当前页
     private int pageSize=2; //页大小
     private int pageCount; //总页数
     private int totalCount; //总记录数
-
+    private List<E>list;
     /**
      * 因为现在我们以及确定了 页大小
      * 在我们知道了总记录数之后，能不能确定总页数
@@ -51,6 +53,13 @@ public class PageUtil {
     }
 
 
+    public List<E> getList() {
+        return list;
+    }
+
+    public void setList(List<E> list) {
+        this.list = list;
+    }
 
     public PageUtil(int pageIndex, int pageSize, int pageICount, int totalCount) {
 
@@ -69,8 +78,9 @@ public class PageUtil {
         return "PageUtil{" +
                 "pageIndex=" + pageIndex +
                 ", pageSize=" + pageSize +
-                ", pageICount=" + pageCount +
+                ", pageCount=" + pageCount +
                 ", totalCount=" + totalCount +
+                ", list=" + list +
                 '}';
     }
 }

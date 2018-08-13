@@ -6,42 +6,29 @@ import java.io.Serializable;
  * Created by Administrator on 2018-8-9.
  */
 public class Users implements Serializable{
-
-    private Integer user_id; //用户ID
+    private Integer users_id; //用户ID
     private String userName;//用户名
     private String password;//用户名
     private String email;//email
     private Integer userType;//用户类型 0：管理员 1：普通用户
 
     public Users() {
-
     }
 
-    @Override
-    public String toString() {
-        return "Users{" +
-                "user_id=" + user_id +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", userType=" + userType +
-                '}';
-    }
-
-    public Users(Integer user_id) {
-        this.user_id = user_id;
+    public Users(Integer user_id, String userName, String password, String email, Integer userType) {
+        this.users_id = user_id;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.userType = userType;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUsers_id() {
+        return users_id;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUsers_id(Integer user_id) {
+        this.users_id = user_id;
     }
 
     public String getUserName() {
@@ -74,5 +61,16 @@ public class Users implements Serializable{
 
     public void setUserType(Integer userType) {
         this.userType = userType;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "user_id=" + users_id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", userType=" + userType +
+                '}';
     }
 }

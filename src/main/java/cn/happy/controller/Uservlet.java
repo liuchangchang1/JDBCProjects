@@ -1,11 +1,9 @@
 package cn.happy.controller;
-
 import cn.happy.bean.Users;
 import cn.happy.service.ServiceFactory;
 import cn.happy.service.user.UserService;
 import cn.happy.util.Md5Encrypt;
 import cn.happy.util.ResultUtil;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,22 +16,19 @@ import java.security.NoSuchAlgorithmException;
  */
 @WebServlet("/login")
 public class Uservlet extends  BaseServlet {
-    @Override
-    public Class getServletClass() {//都像Baseservlet靠拢
-        System.out.println("=====02:UserServlet===》getServletClass");
-        return Uservlet.class;//确定Uservlet这个类，执行 Uservlet。
-    }
-
     //不实例化service层对象  让工厂去实例化
-
-    //不实例化service层对象  让工厂去实例化
-    private UserService userService;
-    private ResultUtil util;
+    private UserService  userService;
+    private ResultUtil util=new ResultUtil();
 
     //当用户访问我们这个servlet的时候 先执行init
     @Override
     public void init() throws ServletException {
-        userService = (UserService) ServiceFactory.getServiceImpl("userService");
+        userService=(UserService) ServiceFactory.getServiceImpl("userService");
+    }
+
+    @Override
+    public Class getServletClass() {
+        return Uservlet.class;
     }
 
     /**
@@ -41,9 +36,9 @@ public class Uservlet extends  BaseServlet {
      */
     public String register(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         //获取用户输入的参数
-        String userName = req.getParameter("username");
-        String password = req.getParameter("password");
-        Users users = new Users();
+        String userName=req.getParameter("username");
+        String password=req.getParameter("password");
+        Users users=new Users();
         users.setUserName(userName);
         try {
             users.setPassword(Md5Encrypt.getEncryptedPwd(password));
@@ -54,45 +49,57 @@ public class Uservlet extends  BaseServlet {
             e.printStackTrace();
         }
         users.setUserType(0);  //设置用户类型
-        users.setEmail("55");
-        int num = userService.add(users);
-        if (num > 0) {//如果加进去值了，
-            return "main";
-        } else {
+        int num= userService.add(users);
+        if (num>0){
+            return  "main";
+        }else{
             return "register";
         }
     }
 
 
-    public ResultUtil login(HttpServletRequest req, HttpServletResponse resp) {
+    public String login(HttpServletRequest req, HttpServletResponse resp){
         System.out.println("====>UserServlet===>login");
         //获取用户登录的用户名和密码
-        String userName = req.getParameter("username");
-        String password = req.getParameter("password");
-        ResultUtil util = new ResultUtil();
+        String userName=req.getParameter("username");
+        String password=req.getParameter("password");
         //得从数据库中获取一个用户名  如果没有用户名不需要再执行后续代码
-        if (userName.equals("admin")) {
-            util.resultSuccess(userName);
-        } else {
-            util.resultFail("用户名错误");
+        String passwordInDB= userService.validateName(userName); //验证用户名是否存在
+        if (passwordInDB!=null){  //用户名正确  并且能找到密码
+            try {
+              if (Md5Encrypt.validPassword(password,passwordInDB)){ //验证密码是否正确
+                    Users users=  userService.login(userName,passwordInDB);
+                    //保存对象
+                    req.getSession().setAttribute("loginUser",users);
+                    return "main";
+                }else {
+                    System.out.println("密码错误");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else{ //用户名错误
+            System.out.println("用户名不存在");
         }
-        //调用MD5验证密码
-        return util;
+        return "login";
     }
 
+/*
+*
+* ajax验证用户名是否存在！
+*
+* */
 
-
-    public ResultUtil validateName(HttpServletRequest req, HttpServletResponse resp){
-        System.out.println("进入了validatename===");
-        String userName=req.getParameter("username");
-        int num=userService.validateName(userName);
-        if(num==0){
-            util.resultSuccess();//可以注册
+    public ResultUtil validateName(HttpServletRequest req, HttpServletResponse resp) {
+        //获取用户名
+        String userName = req.getParameter("username");
+        //调用service层代码
+        String passwordInDB = userService.validateName(userName);
+        if (passwordInDB == null) { //可以注册
+            util.resultSuccess();
+        } else {
+            util.resultFail("改昵称已被占用");
         }
-        else{
-            util.resultFail("该名称以经被占用 ");
-        }
-
-        return  util;
+        return util;
     }
 }
